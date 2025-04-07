@@ -1,11 +1,42 @@
 <!-- markdownlint-configure-file { "first-line-heading": 0 } -->
 
-[![SWUbanner](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct.svg)](https://stand-with-ukraine.pp.ua)
 
-<p align="center">
-  <img alt="Detox" width=380 src="https://raw.githubusercontent.com/wix/Detox/master/docs/img/DetoxLogo.png"/>
-</p>
-<h1 align="center">
+# Detox Project
+
+Android
+1. Clone the project: https://github.com/wix/Detox
+2. Run: cd examples/demo-react-native
+3. Run: npm install
+4. Remove buildToolsVersion = rootProject.ext.buildToolsVersion in app/build.gradle
+5. Run: ./gradlew assembleDebug
+6. Run: ./gradlew assembleAndroidTest
+7. Change the Android Emulator configuration
+8. Run: detox test --configuration android.emu.debug
+
+iOS
+1. Run: cd ios && bundle exec pod install
+2. Run: bundle install --path vendor/bundle
+3. Run: detox build --configuration ios.sim.release
+4. Change the Android Emulator configuration
+5. Run: detox test --configuration ios.sim.release
+
+Error: FAILURE: Build failed with an exception.
+* What went wrong:
+Could not determine the dependencies of task ':app:compileDebugJavaWithJavac'.
+> Could not resolve all dependencies for configuration ':app:debugCompileClasspath'.
+   > Could not resolve com.facebook.react:react-android:0.76.3.
+     Required by:
+         project :app
+      > Could not resolve com.facebook.react:react-android:0.76.3.
+
+Solution:
+https://www.youtube.com/watch?app=desktop&v=fsghCzRmN0k
+Remove buildToolsVersion = rootProject.ext.buildToolsVersion in app/build.gradle
+
+android {
+    REMOVE
+    buildToolsVersion = rootProject.ext.buildToolsVersion
+}
   Detox
 </h1>
 <p align="center">
