@@ -2,7 +2,7 @@
 
 
 # Detox Project
-
+```js
 Android
 1. Clone the project: https://github.com/wix/Detox
 2. Run: cd examples/demo-react-native
@@ -37,6 +37,7 @@ android {
     REMOVE
     buildToolsVersion = rootProject.ext.buildToolsVersion
 }
+```
   Detox
 </h1>
 <p align="center">
