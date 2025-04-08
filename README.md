@@ -80,7 +80,7 @@ The app is busy with the following tasks:
 • There are 1 work items pending on the dispatch queue: "Main Queue (<OS_dispatch_queue_main: com.apple.main-thread>)".
 • The event "Network Request" is taking place with object: "URL: “https://api-dev.gigflex.com:8088/socket/501/o2tr5ber/xhr_streaming?t=1679374218301”".
 Solution:
-Include permission
+Include permissions: { notifications: 'YES', userTracking: 'YES' }
 describe('Check for Login Screen', () => {
 beforeAll(async () => {
 await device.launchApp({
