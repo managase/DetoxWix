@@ -48,7 +48,9 @@ ios/build/Build/Products/Release-iphonesimulator/example.app
 
 8. Run: detox test --configuration ios.sim.release
 ```
-- Error: FAILURE: Build failed with an exception.
+- Error
+```js
+Erro: FAILURE: Build failed with an exception.
 What went wrong:
 Could not determine the dependencies of task ':app:compileDebugJavaWithJavac'.
 > Could not resolve all dependencies for configuration ':app:debugCompileClasspath'.
@@ -65,6 +67,8 @@ android {
     REMOVE
     buildToolsVersion = rootProject.ext.buildToolsVersion
 }
+```
+<h1 align="center">
   Detox
 </h1>
 <p align="center">
