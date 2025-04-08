@@ -16,9 +16,14 @@ Android
 iOS
 1. Run: cd ios && bundle exec pod install
 2. Run: bundle install --path vendor/bundle
+# Run Release Tests
 3. Run: detox build --configuration ios.sim.release
 4. Change the Android Emulator configuration
 5. Run: detox test --configuration ios.sim.release
+
+# Run Debug Tests
+6. Run: detox build --configuration ios.sim.debug
+7. Run: detox test --configuration ios.sim.release
 
 Error: FAILURE: Build failed with an exception.
 * What went wrong:
