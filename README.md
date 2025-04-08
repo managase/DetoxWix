@@ -48,9 +48,16 @@ ios/build/Build/Products/Release-iphonesimulator/example.app
 
 8. Run: detox test --configuration ios.sim.release
 ```
+- Open iOS application
+```js
+xcrun simctl list devices
+1520A9D3-0AB7-4D24-B131-81B9E928C6D1
+xcrun simctl install 1520A9D3-0AB7-4D24-B131-81B9E928C6D1 /ios/build/Build/Products/Release-iphonesimulator/example.app
+```
+
 - Error
 ```js
-Erro: FAILURE: Build failed with an exception.
+Error: FAILURE: Build failed with an exception.
 What went wrong:
 Could not determine the dependencies of task ':app:compileDebugJavaWithJavac'.
 > Could not resolve all dependencies for configuration ':app:debugCompileClasspath'.
@@ -58,15 +65,30 @@ Could not determine the dependencies of task ':app:compileDebugJavaWithJavac'.
      Required by:
          project :app
       > Could not resolve com.facebook.react:react-android:0.76.3.
-
 Solution:
 https://www.youtube.com/watch?app=desktop&v=fsghCzRmN0k
 Remove buildToolsVersion = rootProject.ext.buildToolsVersion in app/build.gradle
-
 android {
     REMOVE
     buildToolsVersion = rootProject.ext.buildToolsVersion
 }
+
+Error:
+The app is busy with the following tasks:
+• Run loop "Main Run Loop" is awake.
+• The event "Network Request" is taking place with object: "URL: “https://api-dev.gigflex.com:8088/socket/347/oxxy2uxi/xhr_streaming?t=1679374217817”".
+• There are 1 work items pending on the dispatch queue: "Main Queue (<OS_dispatch_queue_main: com.apple.main-thread>)".
+• The event "Network Request" is taking place with object: "URL: “https://api-dev.gigflex.com:8088/socket/501/o2tr5ber/xhr_streaming?t=1679374218301”".
+Solution:
+Include permission
+describe('Check for Login Screen', () => {
+beforeAll(async () => {
+await device.launchApp({
+newInstance: true,
+launchArgs: { detoxURLBlacklistRegex: '\("https://typeYourNetworkCallHere.com/*")' },
+permissions: { notifications: 'YES', userTracking: 'YES' },
+})
+})
 ```
 <h1 align="center">
   Detox
