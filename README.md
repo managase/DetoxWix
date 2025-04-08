@@ -3,6 +3,7 @@
 # Steps to Run Detox Tests
 
 - Android
+```js
 1. Clone the project: https://github.com/wix/Detox
 2. Run: cd examples/demo-react-native
 3. Run: npm install
@@ -25,8 +26,9 @@ Detox/examples/demo-react-native/android/app/build/outputs/apk/androidTest/relea
 Detox/examples/demo-react-native/android/app/build/outputs/apk/release/app-release.apk
 
 10. Run: detox test --configuration android.emu.release
-
+```
 - iOS
+```js
 1. Run: cd ios && bundle exec pod install
 2. Run: bundle install --path vendor/bundle
 
@@ -45,7 +47,7 @@ ios/build/Build/Products/Debug-iphonesimulator/example.app
 ios/build/Build/Products/Release-iphonesimulator/example.app
 
 8. Run: detox test --configuration ios.sim.release
-
+```
 - Error: FAILURE: Build failed with an exception.
 What went wrong:
 Could not determine the dependencies of task ':app:compileDebugJavaWithJavac'.
@@ -63,7 +65,6 @@ android {
     REMOVE
     buildToolsVersion = rootProject.ext.buildToolsVersion
 }
-```
   Detox
 </h1>
 <p align="center">
