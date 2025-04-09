@@ -85,7 +85,7 @@ describe('Check for Login Screen', () => {
 })
 ```
 
-- Open iOS application
+- Inspect iOS application
 ```js
 1. Open Accessibility Inspector: code > Open Developer Tool > Accessibility Inspector
 2. Find the iOS simulator: xcrun simctl list devices - 1520A9D3-0AB7-4D24-B131-81B9E928C6D1
@@ -94,7 +94,7 @@ describe('Check for Login Screen', () => {
 5. Inspect elements with Accessibility Inspector
 ```
 
-- Open Android application
+- Inspect Android application
 ```js
 1. Install the application: adb install /path/to/your/app.apk - adb install app-release.apk
 2. Run the command to start React Native: npm run start
