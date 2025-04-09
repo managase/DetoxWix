@@ -76,12 +76,12 @@ The app is busy with the following tasks:
 Solution:
 Include permissions: { notifications: 'YES', userTracking: 'YES' }
 describe('Check for Login Screen', () => {
-beforeAll(async () => {
-await device.launchApp({
-newInstance: true,
-launchArgs: { detoxURLBlacklistRegex: '\("https://typeYourNetworkCallHere.com/*")' },
-permissions: { notifications: 'YES', userTracking: 'YES' },
-})
+  beforeAll(async () => {
+    await device.launchApp({
+    newInstance: true,
+    launchArgs: { detoxURLBlacklistRegex: '\("https://typeYourNetworkCallHere.com/*")' },
+    permissions: { notifications: 'YES', userTracking: 'YES' },
+  })
 })
 ```
 
@@ -95,7 +95,7 @@ permissions: { notifications: 'YES', userTracking: 'YES' },
 ```
 
 - Open Android application
-- ```js
+```js
 1. Install the application: adb install /path/to/your/app.apk - adb install app-release.apk
 2. Run the command to start React Native: npm run start
 3. Open DevTools
