@@ -48,12 +48,6 @@ ios/build/Build/Products/Release-iphonesimulator/example.app
 
 8. Run: detox test --configuration ios.sim.release
 ```
-- Open iOS application
-```js
-xcrun simctl list devices
-1520A9D3-0AB7-4D24-B131-81B9E928C6D1
-xcrun simctl install 1520A9D3-0AB7-4D24-B131-81B9E928C6D1 /ios/build/Build/Products/Release-iphonesimulator/example.app
-```
 
 - Error
 ```js
@@ -90,6 +84,26 @@ permissions: { notifications: 'YES', userTracking: 'YES' },
 })
 })
 ```
+
+- Open iOS application
+```js
+1. Open Accessibility Inspector: code > Open Developer Tool > Accessibility Inspector
+2. Find the iOS simulator: xcrun simctl list devices - 1520A9D3-0AB7-4D24-B131-81B9E928C6D1
+3. Install the application: xcrun simctl install 1520A9D3-0AB7-4D24-B131-81B9E928C6D1 /ios/build/Build/Products/Release-iphonesimulator/example.app
+4. Launch the application: xcrun simctl launch 1520A9D3-0AB7-4D24-B131-81B9E928C6D1 com.yourcompany.YourApp
+5. Inspect elements with Accessibility Inspector
+```
+
+- Open Android application
+- ```js
+1. Install the application: adb install /path/to/your/app.apk - adb install app-release.apk
+2. Run the command to start React Native: npm run start
+3. Open DevTools
+4. Open Dev Menu
+5. Click Toggle Element Inspector
+6. Inspect elements with DevTools
+```
+
 <h1 align="center">
   Detox
 </h1>
